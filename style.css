@@ -4,3 +4,77 @@ body {
     background-position: fixed;
     overflow: hidden; 
 }
+
+/*---------------- Login Panel -----------------*/
+.login-panel {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 23px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    z-index: 1000;
+    background-color:rgb(229, 226, 226);
+    opacity: 0.8;
+    size: 9px;
+    color: rgb(0, 0, 0);
+}
+
+.login-button {
+    display: inline;
+    background-color: rgb(255, 255, 255);
+    border: solid black 1px;
+    margin: 1px;
+    padding: 2px;
+}
+
+.status-field {
+    display: inline;
+}
+
+
+/*---------------- Playground Area ---------------- */
+.playground {
+    position: relative;
+    height: 655px;
+}
+
+
+/*---------------- Games Panel ------------------- */
+.games-panel {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 35px;
+    padding-bottom: 11px;
+    z-index: 1000;
+    background-color:rgb(0, 0, 0);
+}
+
+.games-wrapper {
+    display: table; 
+    margin: 0 auto;
+}
+
+.games-list {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.games-list li {
+    display: inline-block;
+}
+
+.icon {
+    width: 30px;
+    margin: 5px;
+    transition: transform .2s;
+    cursor: pointer;
+} 
+
+.icon:hover {
+    transform: scale(1.5);
+}
+
