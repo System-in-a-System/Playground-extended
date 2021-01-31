@@ -40,6 +40,14 @@ body {
     height: 655px;
 }
 
+#clock {
+    float: right;
+    margin: 5%;
+    font-size: 70px;
+    color: white;
+    opacity: 0.8;
+}
+
 
 /*---------------- Games Panel ------------------- */
 .games-panel {
