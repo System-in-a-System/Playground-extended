@@ -76,18 +76,18 @@ class MemoryGame extends WindowFrame {
     this._newGameButton = document.createElement('button')
     this._newGameButton.textContent = 'New Game'
     this._newGameButton.style.margin = '1px'
-    this._newGameButton.style.marginRight = '2px'
-    this._newGameButton.style.marginLeft = '2px'
+    this._newGameButton.style.marginRight = '6px'
+    this._newGameButton.style.marginLeft = '6px'
 
     this._scoreButton = document.createElement('button')
     this._scoreButton.textContent = 'Score'
     this._scoreButton.style.margin = '1px'
-    this._scoreButton.style.marginRight = '2px'
+    this._scoreButton.style.marginRight = '6px'
 
     this._restartScoreButton = document.createElement('button')
     this._restartScoreButton.textContent = 'Restart Score'
     this._restartScoreButton.style.margin = '1px'
-    this._restartScoreButton.style.marginRight = '2px'
+    this._restartScoreButton.style.marginRight = '6px'
 
     this._controlPanel.appendChild(this._newGameButton)
     this._controlPanel.appendChild(this._scoreButton)
@@ -174,7 +174,7 @@ class MemoryGame extends WindowFrame {
       image.setAttribute('src', 'images/0.jpg')
       image.setAttribute('alt', `${i}`)
       image.setAttribute('tabindex', `${i + 1}`)
-      image.style.height = '54px'
+      image.style.height = '56px'
 
       this._board.appendChild(image)
 
@@ -441,7 +441,7 @@ class MemoryGame extends WindowFrame {
     const scoreListButton = document.createElement('button')
     scoreListButton.textContent = 'Display Score List'
     scoreListButton.style.marginLeft = '55px'
-    scoreListButton.style.backgroundColor = 'rgb(225, 241, 203)'
+    scoreListButton.style.backgroundColor = 'rgb(150, 187, 235)'
     this._contentBlock.appendChild(scoreListButton)
 
     scoreListButton.addEventListener('click', e => {
