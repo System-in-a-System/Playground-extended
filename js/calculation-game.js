@@ -8,31 +8,35 @@ template.innerHTML =
 `
 <div id="gameSpace">
     
-    <div id="motivation" style="margin-top: 10px; text-align: center; font-size: 20px;"></div>
+    <div id="motivation" style="margin-top: 10px; text-align: center; font-size: 17px; padding: 8px; 
+    background-image: url(https://storage.googleapis.com/proudcity/elgl/uploads/2019/08/numbers-graphic.jpg);"></div>
 
     <button id="gameStartButton" 
       style="
         margin-top: 12px; 
-        margin-bottom: 10px;  
-        margin-left: 60px;
-        padding: 3px; 
-        font-size: 12px; 
-        background-color:  rgb(231, 238, 221);"
-    >Let the game begin?</button>
+        margin-bottom: 10px; 
+        margin-left: 30%;
+        margin-right: 30%;
+        padding: 12px; 
+        font-size: 13px;
+        font-weight: lighter; 
+        background-color: whitesmoke;"
+    >Start a round</button>
 
     <div id="paperWrapper" 
       style="
         margin: 7px; 
         padding: 7px; 
-        background-image: url(/css/paperWrapper.jpg); 
-        box-shadow: -3px -3px -0.5px rgb(206, 206, 206);">
+        background-image: url(https://storage.googleapis.com/proudcity/elgl/uploads/2019/08/numbers-graphic.jpg); 
+        box-shadow: -3px -3px -0.5px rgb(206, 206, 206);
+        opacity: 0.8;">
       
           <div id="timer" 
             style="
               background-color: white;
               opacity: 0.5;
-              width: 25px;
-              height: 25px;
+              width: 35px;
+              height: 35px;
               border-style: solid;
               border-width: 1px;
               border-color: black;
@@ -49,24 +53,24 @@ template.innerHTML =
             "></div>
 
           <div id="equation">
-            <div id="firstNumber" style="display: inline; margin-left: 15px; font-size: 20px;">1</div>
-            <div id="operator" style="display: inline; margin-left: 15px; font-size: 20px;">+</div>
-            <div id="secondNumber" style="display: inline; margin-left: 15px; font-size: 20px;">1</div>
-            <div id="euals" style="display: inline; margin-left: 15px; font-size: 20px;">=</div>
-            <input id="result" type="text" style="display: inline; margin-left: 15px; width: 40px; font-size: 20px; opacity: 0.5;">
+            <div id="firstNumber" style="display: inline; margin-left: 15px; font-size: 27px;">1</div>
+            <div id="operator" style="display: inline; margin-left: 15px; font-size: 27px;">+</div>
+            <div id="secondNumber" style="display: inline; margin-left: 15px; font-size: 27px;">1</div>
+            <div id="equals" style="display: inline; margin-left: 15px; font-size: 27px;">=</div>
+            <input id="result" type="text" style="display: inline; margin-left: 15px; width: 45px; font-size: 27px; opacity: 0.5;">
           </div>
     </div>
 
     <button id="submitButton" 
       style="
-        margin-left: 91px; 
+        margin-left: 95px; 
         margin-top: 10px; 
         padding: 7px; 
-        font-size: 15px; 
-        background-color: rgb(231, 238, 221);
+        font-size: 13px; 
+        background-color: whitesmoke;
     ">Submit</button>
 
-    <div id="solutionStatus" style="margin-top: 7px; padding: 5px; font-size: 15px;"></div>
+    <div id="solutionStatus" style="margin-top: 7px; padding: 5px; font-size: 15px; opacity: 0.6;"></div>
 </div>
 `
 
@@ -169,14 +173,14 @@ class CalculationGame extends WindowFrame {
     })
 
     // Recognize the player
-    this._motivation.textContent = `Player: 🐰${this._nickname}`
+    this._motivation.textContent = `Player: ${this._nickname}`
 
     // Starts a game
     this._gameStartButton.addEventListener('click', e => {
       // Rearrange the layout & Motivational image & Words
       this._gameStartButton.style.visibility = 'hidden'
       this._contentBlock.querySelector('#paperWrapper').style.marginTop = '0px'
-      this._motivation.textContent = `Go Go, ${this._nickname}🐰!`
+      this._motivation.textContent = `Go Go, ${this._nickname}!`
 
       // Generate a random equation & set the timer
       this.generateEquation()
@@ -298,7 +302,7 @@ class CalculationGame extends WindowFrame {
     const userResult = parseInt(this._inputResult.value, 10)
     if (userResult === this._correctResult) {
       // Confirm the solution & update the score
-      this._solutionStatus.style.backgroundColor = 'rgb(136, 177, 136)'
+      this._solutionStatus.style.backgroundColor = ' rgb(158, 253, 194)'
       this._solutionStatus.textContent = 'That was correct!'
       this._currentScore += 20
 
