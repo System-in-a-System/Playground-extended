@@ -9,7 +9,6 @@ template.innerHTML =
 <div id="frame"
   style="
     position: absolute;
-    opacity: 0.95;
     height: 375px;
     width: 264px;
     margin-top: 22px;
