@@ -1,6 +1,7 @@
 // Import custom elements
 import './window-frame.js'
 import './memory-game.js'
+import './calculation-game.js'
 
 // Display current time
 displayCurrentTime()
@@ -11,13 +12,19 @@ let windowCounter = 0
 
 // Applications start buttons
 const memoryGameButton = document.querySelector('#memory-game-icon')
-const chatButton = document.querySelector('#chat-icon')
 const calculationGameButton = document.querySelector('#calculation-game-icon')
+const chatButton = document.querySelector('#chat-icon')
 
 // Buttons listen for events:
 memoryGameButton.addEventListener('click', e => {
   const memoryGame = document.createElement('memory-game')
   document.querySelector('.playground').appendChild(memoryGame)
+  windowCounter++
+})
+
+calculationGameButton.addEventListener('click', e => {
+  const calculationGame = document.createElement('calculation-game')
+  document.querySelector('.playground').appendChild(calculationGame)
   windowCounter++
 })
 
@@ -27,11 +34,7 @@ chatButton.addEventListener('click', e => {
   windowCounter++
 })
 
-calculationGameButton.addEventListener('click', e => {
-  const calculationGame = document.createElement('window-frame')
-  document.querySelector('.playground').appendChild(calculationGame)
-  windowCounter++
-})
+
 
 // Export loaded applications counter
 export { windowCounter }
