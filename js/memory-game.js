@@ -23,15 +23,16 @@ template.innerHTML =
 
   <div id="statistics" 
     style="
-      margin-top: 5px;
-      margin-left: 12px;
-      margin-right: 50px;
-      height: 50px;
-      width: 200px;
-      padding: 5px;">
+      margin-top: 10px;
+      width: 90%;
+      height: 90%
+      margin: auto;
+      padding: 12px;
+      background-color: rgb(214, 210, 210);
+      opacity: 0.6;">
         
-        <div id="totalTries">Total tries: 0</div>
-        <div id="totalTimer">Total sec  : 0</div>
+        <div id="totalTries">Total clicks : 0</div>
+        <div id="totalTimer">Total seconds: 0</div>
 
   </div>
 </div>
@@ -186,7 +187,7 @@ class MemoryGame extends WindowFrame {
       image.addEventListener('click', e => {
         // Update number of clicks
         this._numberOfClicks++
-        this._totalTries.textContent = `Total tries: ${this._numberOfClicks}`
+        this._totalTries.textContent = `Total clicks : ${this._numberOfClicks}`
 
         // Locate image position (index) in an array
         const imagePosition = i
@@ -294,7 +295,7 @@ class MemoryGame extends WindowFrame {
     this._currentTimer = setInterval(() => {
       // Display total seconds
       this._totalTime++
-      this._totalTimer.textContent = `Total sec : ${this._totalTime}`
+      this._totalTimer.textContent = `Total seconds: ${this._totalTime}`
     }, 1000)
   }
 
@@ -396,8 +397,8 @@ class MemoryGame extends WindowFrame {
     this.setTimer()
 
     // Reset statistics
-    this._totalTimer.textContent = `Total sec : ${this._totalTime}`
-    this._totalTries.textContent = `Total tries : ${this._numberOfClicks}`
+    this._totalTimer.textContent = `Total seconds: ${this._totalTime}`
+    this._totalTries.textContent = `Total clicks : ${this._numberOfClicks}`
   }
 
   /**
@@ -526,7 +527,6 @@ class MemoryGame extends WindowFrame {
     }
 
     // Centralize the score-table
-    this._contentBlock.style.padding = '10px'
     scoreTable.style.margin = 'auto'
     scoreTable.style.marginTop = '50px'
   }
