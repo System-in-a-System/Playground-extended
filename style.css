@@ -47,6 +47,13 @@ body {
     opacity: 0.8;
 }
 
+#stars-effect {
+    margin-top: 0%;
+    margin-left: 18%;
+    width: 60%;
+    opacity: 0.4;
+}
+
 
 /*---------------- Games Panel ------------------- */
 .games-panel {
