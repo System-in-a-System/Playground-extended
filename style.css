@@ -11,7 +11,7 @@ body {
     top: 0px;
     left: 0px;
     right: 0px;
-    height: 25px;
+    height: 26px;
     padding-top: 2px;
     padding-bottom: 2px;
     z-index: 1000;
@@ -20,16 +20,18 @@ body {
     color: rgb(0, 0, 0);
 }
 
-.login-button {
+#login-button {
     display: inline;
-    background-color: white;
-    border: solid black 1px;
-    margin: 1px;
-    padding: 2px;
+    margin-left: 49%;
+    height: 25px;
 }
 
 .status-field {
     display: inline;
+    background-color: rgba(229, 226, 226, 0.6);
+    border-radius: 10px;
+    padding: 15px;
+
 }
 
 
@@ -40,6 +42,7 @@ body {
 }
 
 #clock {
+    position: relative;
     float: right;
     margin: 5%;
     font-size: 70px;
@@ -48,6 +51,7 @@ body {
 }
 
 #stars-effect {
+    position: relative;
     margin-top: 0%;
     margin-left: 18%;
     width: 60%;
