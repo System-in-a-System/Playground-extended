@@ -8,20 +8,24 @@ template.innerHTML =
 `
 <div id="gameSpace">
     
-    <div id="motivation" style="margin-top: 10px; text-align: center; font-size: 17px; padding: 8px; 
+    <div id="motivation" style="margin-top: 10px; text-align: center; font-size: 12px; padding: 12px; opacity: 0.7; 
     background-image: url(https://storage.googleapis.com/proudcity/elgl/uploads/2019/08/numbers-graphic.jpg);"></div>
 
-    <button id="gameStartButton" 
-      style="
-        margin-top: 12px; 
-        margin-bottom: 10px; 
-        margin-left: 30%;
-        margin-right: 30%;
-        padding: 12px; 
-        font-size: 13px;
-        font-weight: lighter; 
-        background-color: whitesmoke;"
-    >Start a round</button>
+    <div id="gameButtonContainer" style="background-image: url(https://blackstormco.asia/wp-content/uploads/2019/09/1.jpg); opacity: 0.6;">
+      <button id="gameStartButton" 
+        style="
+          margin-top: 12px; 
+          margin-bottom: 10px; 
+          margin-left: 30%;
+          margin-right: 30%;
+          padding: 12px; 
+          font-size: 13px;
+          font-weight: lighter; 
+          background-color: whitesmoke;"
+        >Start a round
+      </button>
+    </div>
+    
 
     <div id="paperWrapper" 
       style="
@@ -29,7 +33,7 @@ template.innerHTML =
         padding: 7px; 
         background-image: url(https://storage.googleapis.com/proudcity/elgl/uploads/2019/08/numbers-graphic.jpg); 
         box-shadow: -3px -3px -0.5px rgb(206, 206, 206);
-        opacity: 0.8;">
+        opacity: 0.7;">
       
           <div id="timer" 
             style="
@@ -61,16 +65,9 @@ template.innerHTML =
           </div>
     </div>
 
-    <button id="submitButton" 
-      style="
-        margin-left: 95px; 
-        margin-top: 10px; 
-        padding: 7px; 
-        font-size: 13px; 
-        background-color: whitesmoke;
-    ">Submit</button>
+    
 
-    <div id="solutionStatus" style="margin-top: 7px; padding: 5px; font-size: 15px; opacity: 0.6;"></div>
+    <div id="solutionStatus" style="height: 36px; padding: 20px; font-size: 17px; text-align: center; opacity: 0.4;"></div>
 </div>
 `
 
@@ -117,10 +114,7 @@ class CalculationGame extends WindowFrame {
     this._inputResult = this._equation.querySelector('#result')
     this._correctResult = 0
 
-    this._submitButton = this._gameSpace.querySelector('#submitButton')
-    this._submitButton.style.visibility = 'hidden'
     this._enterEventIsAllowed = false
-
     this._solutionStatus = this._gameSpace.querySelector('#solutionStatus')
 
     // Generate buttons
@@ -180,12 +174,10 @@ class CalculationGame extends WindowFrame {
       // Rearrange the layout & Motivational image & Words
       this._gameStartButton.style.visibility = 'hidden'
       this._contentBlock.querySelector('#paperWrapper').style.marginTop = '0px'
-      this._motivation.textContent = `Go Go, ${this._nickname}!`
-
+      
       // Generate a random equation & set the timer
       this.generateEquation()
       this.setTimer()
-      this._submitButton.style.visibility = 'visible'
       this._inputResult.value = ''
       this._enterEventIsAllowed = true
     })
@@ -211,21 +203,7 @@ class CalculationGame extends WindowFrame {
       }
     })
 
-    // Submits solutions
-    this._submitButton.addEventListener('click', e => {
-      clearInterval(this._currentTimer)
-      this.checkResults()
-      this._roundsCounter++
-
-      // Generate equation until they number reaches 10
-      if (this._roundsCounter < 10) {
-        this.generateEquation()
-        this.setTimer()
-      } else {
-        this._gameIsOn = false
-        this.finishGame()
-      }
-    })
+    
 
     // Control panel buttons are listening for events:
     this._newGameButton.addEventListener('click', e => {
@@ -303,17 +281,17 @@ class CalculationGame extends WindowFrame {
     if (userResult === this._correctResult) {
       // Confirm the solution & update the score
       this._solutionStatus.style.backgroundColor = ' rgb(158, 253, 194)'
-      this._solutionStatus.textContent = 'That was correct!'
+      this._solutionStatus.textContent = 'Correct😊'
       this._currentScore += 20
 
       // Add sound effects
-      const correctSound = new window.Audio('./css/correct.mp3')
+      const correctSound = new window.Audio('./sounds/correct.mp3')
       correctSound.volume = 0.1
       correctSound.play()
     } else {
       // Inform about incorrect answer
       this._solutionStatus.style.backgroundColor = 'rgb(177, 176, 176)'
-      this._solutionStatus.textContent = `Incorrect, the right answer was ${this._correctResult}`
+      this._solutionStatus.textContent = `Incorrect😋, right answer: ${this._correctResult}`
     }
     // Clean the input field
     this._inputResult.value = ''
@@ -375,7 +353,6 @@ class CalculationGame extends WindowFrame {
     this._contentBlock.appendChild(this._gameSpace)
 
     this._gameStartButton.style.visibility = 'visible'
-    this._submitButton.style.visibility = 'hidden'
     this._enterEventIsAllowed = false
 
     // Clean motivation container
