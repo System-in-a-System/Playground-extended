@@ -10,8 +10,8 @@ template.innerHTML =
   style="
     position: absolute;
     opacity: 0.95;
-    height: 373px;
-    width: 260px;
+    height: 375px;
+    width: 264px;
     margin-top: 22px;
     border: solid;
     border-width: 6px;

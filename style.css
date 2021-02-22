@@ -24,6 +24,7 @@ body {
 .login-button {
     display: inline;
     background-color: rgb(255, 255, 255);
+    background-color: rgb(150, 187, 235);
     border: solid black 1px;
     margin: 1px;
     padding: 2px;
