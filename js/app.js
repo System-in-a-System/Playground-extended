@@ -1,10 +1,41 @@
 // Import custom elements
+import './login-form.js'
 import './window-frame.js'
 import './memory-game.js'
 import './calculation-game.js'
 
 // Display current time
 displayCurrentTime()
+
+
+// Handle login / logoff
+const loginButton = document.querySelector('#login-button')
+
+const status = document.querySelector('.status-field')
+if (window.localStorage.getItem('nickname')) {
+  status.textContent = ` 👽 ${window.localStorage.getItem('nickname')} is online`
+  loginButton.textContent = 'Log off'
+}
+
+loginButton.addEventListener('click', e => {
+  // If the user is already logged in, the button works as a log off button
+  if (window.localStorage.getItem('nickname')) {
+    status.textContent = 'Is there anybody there?'
+    window.localStorage.removeItem('nickname')
+    loginButton.textContent = 'Log in'
+    return
+  }
+
+  // Display login form
+  const loginForm = document.createElement('login-form')
+  document.querySelector('.playground').appendChild(loginForm)
+
+  // Catch dispatched event from login form (nickname is valid)
+  document.addEventListener('nicknameValid', e => {
+    status.textContent = ` 👽 ${e.detail.text()} is online.`
+    loginButton.textContent = 'Log off'
+  })
+})
 
 
 // Loaded applications counter (for smooth mutual positioning)

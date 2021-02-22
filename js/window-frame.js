@@ -16,17 +16,18 @@ template.innerHTML =
     border-width: 6px;
     border-color: rgb(128, 125, 125);
     border-radius: 3px;
-    background-color: whitesmoke;">
+    background-color: whitesmoke;
+    opacity: 0.95;">
     
       <div id="upper_panel" style="height: 25px; background-color: rgb(128, 125, 125);">
         <span id="icon_holder" style="float: left; width: 20px; height: 20px;"></span>
         <p id="app_title" style="display: inline;"></p>
         <button id="exit_button" style="display: inline; float: right;">X</button>
-    </div>
+      </div>
 
-    <div id="control_panel" style="height: 23px; background-color: rgb(214, 210, 210);"></div> 
+      <div id="control_panel" style="height: 23px; background-color: rgb(214, 210, 210); opacity: 0.65;"></div> 
             
-    <div class="content_block"></div>
+      <div class="content_block"></div>
 </div>
 `
 
