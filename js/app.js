@@ -3,6 +3,7 @@ import './login-form.js'
 import './window-frame.js'
 import './memory-game.js'
 import './calculation-game.js'
+import './chat-app.js'
 
 // Display current time
 displayCurrentTime()
@@ -60,7 +61,7 @@ calculationGameButton.addEventListener('click', e => {
 })
 
 chatButton.addEventListener('click', e => {
-  const chat = document.createElement('window-frame')
+  const chat = document.createElement('chat-app')
   document.querySelector('.playground').appendChild(chat)
   windowCounter++
 })

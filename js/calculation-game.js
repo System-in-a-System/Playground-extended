@@ -145,7 +145,7 @@ class CalculationGame extends WindowFrame {
     this._totalScore = 0
 
     // Append nickname to the game
-    this._nickname = window.localStorage.getItem('nickname') || 'Unknown Hero'
+    this._nickname = window.localStorage.getItem('nickname') || 'Unknown Entity'
 
     // Game switcher
     this._gameIsOn = true

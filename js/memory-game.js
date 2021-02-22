@@ -113,8 +113,8 @@ class MemoryGame extends WindowFrame {
     this._currentTimer = ''
     this._score = 0
 
-    // Retrieve the nickname from local storage or set it to default 'Unknown Hero'
-    this._nickname = window.localStorage.getItem('nickname') || 'Unknown Hero'
+    // Retrieve the nickname from local storage or set it to default 'Unknown Entity'
+    this._nickname = window.localStorage.getItem('nickname') || 'Unknown Entity'
   }
 
   /**

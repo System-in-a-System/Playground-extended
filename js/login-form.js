@@ -124,7 +124,7 @@ class LoginForm extends window.HTMLElement {
       this._nickname = this._nicknameField.value
       window.localStorage.setItem('nickname', this._nickname)
     } else {
-      this._loginBlock.querySelector('#label').innerText = 'Do not leave the field blank!'
+      this._loginBlock.querySelector('#label').innerText = 'Do not leave unintroduced!'
     }
   }
 
