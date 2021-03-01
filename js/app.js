@@ -5,6 +5,7 @@ import './memory-game.js'
 import './calculation-game.js'
 import './chat-app.js'
 import './weather-app.js'
+import './style-settings.js'
 
 // Display current time
 displayCurrentTime()
@@ -48,6 +49,7 @@ const memoryGameButton = document.querySelector('#memory-game-icon')
 const calculationGameButton = document.querySelector('#calculation-game-icon')
 const chatButton = document.querySelector('#chat-icon')
 const weatherAppButton = document.querySelector('#weather-app-icon')
+const styleSettingsButton = document.querySelector('#style-settings-icon')
 
 // Buttons listen for events:
 memoryGameButton.addEventListener('click', e => {
@@ -71,6 +73,12 @@ chatButton.addEventListener('click', e => {
 weatherAppButton.addEventListener('click', e => {
   const weatherApp = document.createElement('weather-app')
   document.querySelector('.playground').appendChild(weatherApp)
+  windowCounter++
+})
+
+styleSettingsButton.addEventListener('click', e => {
+  const styleSettings = document.createElement('style-settings')
+  document.querySelector('.playground').appendChild(styleSettings)
   windowCounter++
 })
 
