@@ -4,6 +4,7 @@ import './window-frame.js'
 import './memory-game.js'
 import './calculation-game.js'
 import './chat-app.js'
+import './weather-app.js'
 
 // Display current time
 displayCurrentTime()
@@ -11,19 +12,19 @@ displayCurrentTime()
 
 // Handle login / logoff
 const loginButton = document.querySelector('#login-button')
-
 const status = document.querySelector('.status-field')
+
 if (window.localStorage.getItem('nickname')) {
   status.textContent = ` 👽 ${window.localStorage.getItem('nickname')} is online`
-  loginButton.textContent = 'Log off'
 }
 
 loginButton.addEventListener('click', e => {
-  // If the user is already logged in, the button works as a log off button
+  
+  // If the user is already logged in... 
   if (window.localStorage.getItem('nickname')) {
-    status.textContent = 'Is there anybody there?'
+    // the button works as a log off button
     window.localStorage.removeItem('nickname')
-    loginButton.textContent = 'Log in'
+    status.textContent = 'Is there anybody there?'
     return
   }
 
@@ -46,6 +47,7 @@ let windowCounter = 0
 const memoryGameButton = document.querySelector('#memory-game-icon')
 const calculationGameButton = document.querySelector('#calculation-game-icon')
 const chatButton = document.querySelector('#chat-icon')
+const weatherAppButton = document.querySelector('#weather-app-icon')
 
 // Buttons listen for events:
 memoryGameButton.addEventListener('click', e => {
@@ -66,6 +68,11 @@ chatButton.addEventListener('click', e => {
   windowCounter++
 })
 
+weatherAppButton.addEventListener('click', e => {
+  const weatherApp = document.createElement('weather-app')
+  document.querySelector('.playground').appendChild(weatherApp)
+  windowCounter++
+})
 
 
 // Export loaded applications counter
@@ -73,7 +80,9 @@ export { windowCounter }
 
 
 
-// Assisting methods
+//============================================================================
+// Assisting methods:
+
 function displayCurrentTime() {
   let currentTime = new Date()
   let hours = currentTime.getHours()
