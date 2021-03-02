@@ -16,8 +16,8 @@ template.innerHTML = `
     background: radial-gradient(circle, rgba(224,224,237,0.9867297260701156) 63%, rgba(97,115,180,1) 89%, rgba(5,3,42,1) 100%);">
     
       <img src="" alt="" srcset="" id="weather-icon">
-      <div id="location" style="font-size: 20px;">Unable to Fetch Weather</div>
-      <div id="description">No Information Available.</div>
+      <div id="location" style="font-size: 20px;"></div>
+      <div id="description"></div>
       <div id="weather-temperature"
         style="
           display: flex; 
@@ -25,7 +25,7 @@ template.innerHTML = `
           margin: 15px 0;
           font-size: 14px;">
 
-            <div id="c">Error</div>
+            <div id="c"></div>
             <div id="circle"
               style="
                 background-color: black;
@@ -33,11 +33,11 @@ template.innerHTML = `
                 height: 15px;
                 width: 15px;
                 margin: 0 15px;"></div>
-            <div id="f">Error</div>
+            <div id="f"></div>
       </div>
       <div id="sun-info" style="font-size: 10px;">
-            <p>Sunrise: <span id="sunrise">No Information Available</span></p>
-            <p>Sunset: <span id="sunset">No Information Available</span></p>
+            <p>Sunrise: <span id="sunrise"></span></p>
+            <p>Sunset: <span id="sunset"></span></p>
       </div>
 </div>
 `;
