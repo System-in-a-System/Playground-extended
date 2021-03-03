@@ -55,7 +55,8 @@ class WeatherApp extends WindowFrame {
     // Deep clone 'weather-app' template & Append it to the 'content block' from the WindowFrame parent class
     this._contentBlock.appendChild(template.content.cloneNode(true));
     this._iconHolder.style.background =
-      "url(https://www.flaticon.com/svg/vstatic/svg/578/578116.svg?token=exp=1614598104~hmac=938bb537cc90ad11607945110d6e6212) no-repeat";
+      "url(https://cdn3.iconfinder.com/data/icons/spring-5/44/spring_work-17-512.png) no-repeat";
+    this._iconHolder.style.backgroundSize = "contain";
     this._appTitle.textContent = "Weather";
 
     // Reference the structural parts of the appended 'weather-app' template
