@@ -52,7 +52,8 @@ class StyleSettings extends WindowFrame {
     // Deep clone 'style-settings' template & Append it to the 'content block' from the WindowFrame parent class
     this._contentBlock.appendChild(template.content.cloneNode(true));
     this._iconHolder.style.background =
-      "url(https://www.flaticon.com/svg/vstatic/svg/3132/3132084.svg?token=exp=1614626208~hmac=cb8021233fb69fa3de79ac6cba004d78) no-repeat";
+      "url(https://img.utdstc.com/icon/6aa/5f4/6aa5f4f37a2a4111e3f8cdca68dab3b9d0d38632479bcccf594891ffd7b2f4d2:100) no-repeat";
+    this._iconHolder.style.backgroundSize = "contain";
     this._appTitle.textContent = "Style Settings";
 
     // Reference the structural parts of the appended 'style-settings' template
