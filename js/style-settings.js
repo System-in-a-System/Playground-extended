@@ -26,7 +26,17 @@ template.innerHTML = `
     
     <div>
         <input type="radio" id="style-alternative-3" name="style-alternatives" value="style-alternative-3">
-        <label for="style-alternative-3">Adventurous</label>
+        <label for="style-alternative-3">Little Bang</label>
+    </div>
+
+    <div>
+        <input type="radio" id="style-alternative-4" name="style-alternatives" value="style-alternative-4">
+        <label for="style-alternative-4">Falling Asleep</label>
+    </div>
+
+    <div>
+        <input type="radio" id="style-alternative-5" name="style-alternatives" value="style-alternative-5">
+        <label for="style-alternative-5">Into Singularity</label>
     </div>
     
 
@@ -62,6 +72,8 @@ class StyleSettings extends WindowFrame {
     this._styleAlternative1 = this._contentBlock.querySelector("#style-alternative-1");
     this._styleAlternative2 = this._contentBlock.querySelector("#style-alternative-2");
     this._styleAlternative3 = this._contentBlock.querySelector("#style-alternative-3");
+    this._styleAlternative4 = this._contentBlock.querySelector("#style-alternative-4");
+    this._styleAlternative5 = this._contentBlock.querySelector("#style-alternative-5");
     this._applyButton = this._contentBlock.querySelector("#apply-button");
   }
 
@@ -75,11 +87,15 @@ class StyleSettings extends WindowFrame {
 
     this._applyButton.addEventListener("click", (e) => {
         if(this._styleAlternative1.checked) {
-            document.body.style.backgroundImage = 'url("https://w-dog.ru/wallpapers/2/19/501625857244167/kosmos-fantastika-mirozdanie-planeta-gorizont-ochertaniya-svet-zvezda-vosxod-bezdna-tma-prostranstvo-tumannosti-rossyp-zv-zd.jpg")';
+          document.body.style.backgroundImage = 'url("https://w-dog.ru/wallpapers/2/19/501625857244167/kosmos-fantastika-mirozdanie-planeta-gorizont-ochertaniya-svet-zvezda-vosxod-bezdna-tma-prostranstvo-tumannosti-rossyp-zv-zd.jpg")';
         } else if(this._styleAlternative2.checked) {
-            document.body.style.backgroundImage = 'url("https://cdn.wallpapersafari.com/21/65/B8aWZ2.jpg")';
+          document.body.style.backgroundImage = 'url("https://cdn.wallpapersafari.com/21/65/B8aWZ2.jpg")';
         } else if(this._styleAlternative3.checked) {
-            document.body.style.backgroundImage = 'url("https://wallpapershome.com/images/pages/pic_h/15621.jpg")'; 
+          document.body.style.backgroundImage = 'url("https://avatars.mds.yandex.net/get-zen_doc/96506/pub_5cf7a3a2c3edd100b0f7c963_5cf7a92dfa15f800b096ed7c/scale_1200")'; 
+        } else if(this._styleAlternative4.checked) {
+          document.body.style.backgroundImage = 'url("https://wallpapersplanet.net/sites/default/files/space-planets-wallpapers-39001-6570175.png")';
+        } else if(this._styleAlternative5.checked) {
+          document.body.style.backgroundImage = 'url("https://sm.mashable.com/mashable_in/photo/default/shutterstock-534162925_4hv4.jpg")';
         }
     })
 
