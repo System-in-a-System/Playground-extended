@@ -16,8 +16,7 @@ template.innerHTML =
     border-width: 6px;
     border-color: rgb(128, 125, 125);
     border-radius: 3px;
-    background-color: whitesmoke;
-    opacity: 0.95;">
+    background-color: whitesmoke;">
     
       <div id="upper_panel" style="height: 25px; background-color: rgb(128, 125, 125);">
         <span id="icon_holder" style="float: left; width: 20px; height: 20px;"></span>
