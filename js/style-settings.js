@@ -10,7 +10,8 @@ template.innerHTML = `
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
+    margin-left: 25%;
     height: 327px;">
     
     <div>
@@ -31,7 +32,7 @@ template.innerHTML = `
 
     <button id="apply-button" 
       style="
-      width: 100px;
+      width: 120px;
       height: 50px;
       ">
       Apply</button>
@@ -52,7 +53,7 @@ class StyleSettings extends WindowFrame {
     // Deep clone 'style-settings' template & Append it to the 'content block' from the WindowFrame parent class
     this._contentBlock.appendChild(template.content.cloneNode(true));
     this._iconHolder.style.background =
-      "url(https://img.utdstc.com/icon/6aa/5f4/6aa5f4f37a2a4111e3f8cdca68dab3b9d0d38632479bcccf594891ffd7b2f4d2:100) no-repeat";
+      "url(https://cdn2.iconfinder.com/data/icons/webina-seo-development-and-marketing/128/seo_web-84-512.png) no-repeat";
     this._iconHolder.style.backgroundSize = "contain";
     this._appTitle.textContent = "Style Settings";
 
