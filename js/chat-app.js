@@ -193,7 +193,7 @@ class ChatApp extends WindowFrame {
    * @memberof ChatApp
    */
   connect () {
-    this.socket = new window.WebSocket('ws://vhost3.lnu.se:20080/socket/')
+    this.socket = new window.WebSocket('wss://courselab.lnu.se/message-app/socket')
   }
 
   /**
