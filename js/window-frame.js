@@ -123,7 +123,7 @@ export class WindowFrame extends window.HTMLElement {
   }
 
   /**
-   * Handles drop&move
+   * Handles drag & move
    *
    * @memberof WindowFrame
    */

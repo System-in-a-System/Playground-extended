@@ -8,14 +8,24 @@ const template = document.createElement('template')
 template.innerHTML =
 `
 <div id="chat" style="position: relative;">
-  <div id = "storedMessages" style = "height: 295px; width: 100%; overflow-y: scroll; opacity: 0.85;"></div>
+  <div id="storedMessages" 
+    style="
+      height: 295px; 
+      width: 100%; 
+      overflow-y: scroll; 
+      opacity: 0.85;">
+  </div>
   
-  <div id = "newMessagePanel" style = "display: flex; height: 29px; background-color: grey; padding: 3px;">
+  <div id="newMessagePanel" 
+    style="
+      display: flex; 
+      height: 29px; 
+      background-color: grey; 
+      padding: 3px;">
 
-    <textarea id = "writingMessageArea" style = "height: 20px; width: 180px; resize: none; display:inline-block;"></textarea>
-    <button id = "emojiMenuButton" style = "height: 26px; width: 25px; padding: 0px; display:inline-block">🙂</button> 
-    <button id = "sendButton" style = "height: 26px; display:inline-block;">Send</button>
-
+        <textarea id="writingMessageArea" style="height: 20px; width: 180px; resize: none; display:inline-block;"></textarea>
+        <button id="emojiMenuButton" style="height: 26px; width: 25px; padding: 0px; display:inline-block">🙂</button> 
+        <button id ="sendButton" style="height: 26px; display:inline-block;">Send</button>
   </div>
 </div>
 `
@@ -25,10 +35,9 @@ const messageTemplate = document.createElement('template')
 
 messageTemplate.innerHTML =
 `
-<div class = "message" style="margin: 2px; padding: 2px;">
-  <div class = "authorLine">
-    
-    <p class = "timeStamp" 
+<div class="message" style="margin: 2px; padding: 2px;">
+  <div class="authorLine">
+    <p class="timeStamp" 
       style="
         display: inline; 
         float: right; 
@@ -36,8 +45,11 @@ messageTemplate.innerHTML =
         background-color: rgba(206, 226, 180, 0.5); 
         font-size: 10px;">
     </p> 
-
-    <p class = "author" style="margin: 1px; background-color: rgba(206, 226, 180, 0.5);"></p>
+    <p class="author" 
+      style="
+        margin: 1px; 
+        background-color: rgba(206, 226, 180, 0.5);">
+    </p>
   </div>
   
   <p class = "text" style="margin: 1px;"></p>
@@ -61,9 +73,7 @@ class ChatApp extends WindowFrame {
 
     // Reference the structural parts of the appended 'chat-app' template
     this._chat = this._contentBlock.querySelector('#chat')
-
     this._storedMessagesContainer = this._contentBlock.querySelector('#storedMessages')
-
     this._newMessagePanel = this._contentBlock.querySelector('#newMessagePanel')
     this._textArea = this._contentBlock.querySelector('#writingMessageArea')
     this._emojiButton = this._contentBlock.querySelector('#emojiMenuButton')
@@ -72,7 +82,7 @@ class ChatApp extends WindowFrame {
     // Emoji menu switcher
     this._emojiMenuOn = false
 
-    // Set initial socket value to null
+    // Set initial web socket value to null
     this.socket = null
 
     // Retrieve nickname information from local storage
@@ -93,7 +103,7 @@ class ChatApp extends WindowFrame {
       this.refocusStack()
     })
 
-    // If no nickname has been retrieved from local storage, ask for user nickname
+    // If no nickname has been retrieved from local storage, set it to default value
     if (!this._nickname) {
       this._nickname = 'Unknown Entity'
     }
@@ -244,7 +254,7 @@ class ChatApp extends WindowFrame {
     this._storedMessagesContainer.appendChild(currentMessageContainer)
     this._storedMessagesContainer.lastChild.scrollIntoView(false)
 
-    // Limit the number of received and printed messages
+    // Limit the number of received and printed messages to 50
     const allMessages = this._storedMessagesContainer.querySelectorAll('.message')
     const numberOfMessages = allMessages.length
 

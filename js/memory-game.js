@@ -113,7 +113,7 @@ class MemoryGame extends WindowFrame {
     this._currentTimer = ''
     this._score = 0
 
-    // Retrieve the nickname from local storage or set it to default 'Unknown Entity'
+    // Retrieve the nickname from local storage or set it to default
     this._nickname = window.localStorage.getItem('nickname') || 'Unknown Entity'
   }
 
@@ -524,8 +524,7 @@ class MemoryGame extends WindowFrame {
 
     // Load top-players into a score-table
     for (let i = 0; i < retrievedTopList.length; i++) {
-      scoreTable.innerHTML +=
-      '<tr><td>' + retrievedTopList[i].name + '</td><td>' + retrievedTopList[i].score + '</td></tr>'
+      scoreTable.innerHTML += '<tr><td>' + retrievedTopList[i].name + '</td><td>' + retrievedTopList[i].score + '</td></tr>'
     }
 
     // Centralize the score-table

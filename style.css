@@ -1,100 +1,95 @@
 body {
-    background-image: url("https://w-dog.ru/wallpapers/2/19/501625857244167/kosmos-fantastika-mirozdanie-planeta-gorizont-ochertaniya-svet-zvezda-vosxod-bezdna-tma-prostranstvo-tumannosti-rossyp-zv-zd.jpg");
-    background-size: cover;
-    background-position: fixed;
-    overflow: hidden; 
+  background-image: url("https://w-dog.ru/wallpapers/2/19/501625857244167/kosmos-fantastika-mirozdanie-planeta-gorizont-ochertaniya-svet-zvezda-vosxod-bezdna-tma-prostranstvo-tumannosti-rossyp-zv-zd.jpg");
+  background-size: cover;
+  background-position: fixed;
+  overflow: hidden;
 }
 
 /*---------------- Login Panel -----------------*/
 .login-panel {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    height: 26px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    z-index: 1000;
-    background-color:rgba(229, 226, 226, 0.7);
-    size: 9px;
-    color: rgb(0, 0, 0);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 26px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  z-index: 1000;
+  background-color: rgba(229, 226, 226, 0.7);
+  size: 9px;
+  color: rgb(0, 0, 0);
 }
 
 #login-button {
-    display: inline;
-    margin-left: 49%;
-    height: 45px;
-    width: 50px;
+  display: inline;
+  margin-left: 49%;
+  height: 45px;
+  width: 50px;
 }
 
 .status-field {
-    display: inline;
-    background-color: rgba(229, 226, 226, 0.6);
-    border-radius: 10px;
-    padding: 15px;
-
+  display: inline;
+  background-color: rgba(229, 226, 226, 0.6);
+  border-radius: 10px;
+  padding: 15px;
 }
-
 
 /*---------------- Playground Area ---------------- */
 .playground {
-    position: relative;
-    height: 655px;
+  position: relative;
+  height: 655px;
 }
 
 #clock {
-    position: relative;
-    float: right;
-    margin: 5%;
-    font-size: 70px;
-    color: white;
-    opacity: 0.8;
+  position: relative;
+  float: right;
+  margin: 5%;
+  font-size: 70px;
+  color: white;
+  opacity: 0.8;
 }
 
 #stars-effect {
-    position: relative;
-    margin-top: 0%;
-    margin-left: 18%;
-    width: 60%;
-    opacity: 0.4;
+  position: relative;
+  margin-top: 0%;
+  margin-left: 18%;
+  width: 60%;
+  opacity: 0.4;
 }
-
 
 /*---------------- Games Panel ------------------- */
 .games-panel {
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 35px;
-    padding-bottom: 11px;
-    z-index: 1000;
-    background-color:rgb(0, 0, 0);
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 35px;
+  padding-bottom: 11px;
+  z-index: 1000;
+  background-color: rgb(0, 0, 0);
 }
 
 .games-wrapper {
-    display: table; 
-    margin: 0 auto;
+  display: table;
+  margin: 0 auto;
 }
 
 .games-list {
-    margin: 0 auto;
-    width: fit-content;
+  margin: 0 auto;
+  width: fit-content;
 }
 
 .games-list li {
-    display: inline-block;
+  display: inline-block;
 }
 
 .icon {
-    width: 30px;
-    margin: 5px;
-    transition: transform .2s;
-    cursor: pointer;
-} 
-
-.icon:hover {
-    transform: scale(1.5);
+  width: 30px;
+  margin: 5px;
+  transition: transform 0.2s;
+  cursor: pointer;
 }
 
-/*---------------------tic tac game----------------------*/
+.icon:hover {
+  transform: scale(1.5);
+}

@@ -20,7 +20,6 @@ if (window.localStorage.getItem('nickname')) {
 }
 
 loginButton.addEventListener('click', e => {
-  
   // If the user is already logged in... 
   if (window.localStorage.getItem('nickname')) {
     // the button works as a log off button
@@ -44,14 +43,14 @@ loginButton.addEventListener('click', e => {
 // Loaded applications counter (for smooth mutual positioning)
 let windowCounter = 0
 
-// Applications start buttons
+// Applications' start buttons
 const memoryGameButton = document.querySelector('#memory-game-icon')
 const calculationGameButton = document.querySelector('#calculation-game-icon')
 const chatButton = document.querySelector('#chat-icon')
 const weatherAppButton = document.querySelector('#weather-app-icon')
 const styleSettingsButton = document.querySelector('#style-settings-icon')
 
-// Buttons listen for events:
+// Buttons listen for events
 memoryGameButton.addEventListener('click', e => {
   const memoryGame = document.createElement('memory-game')
   document.querySelector('.playground').appendChild(memoryGame)
@@ -89,14 +88,14 @@ export { windowCounter }
 
 
 //============================================================================
-// Assisting methods:
+// Assisting functions:
 
 function displayCurrentTime() {
   let currentTime = new Date()
   let hours = currentTime.getHours()
   let minutes = currentTime.getMinutes()
   
-  let amOrPm = hours < 12 ? "AM" : "PM"
+  let amOrPm = hours < 12 ? 'AM' : 'PM'
 
   hours = hours === 0 ? 12 : hours > 12 ? hours - 12 : hours
 
@@ -104,11 +103,11 @@ function displayCurrentTime() {
   minutes = addZero(minutes)
 
   let timeString = `${hours}:${minutes} ${amOrPm}`
-  document.getElementById("clock").innerText = timeString
+  document.getElementById('clock').innerText = timeString
 
   let timer = setTimeout(displayCurrentTime, 1000)
 }
 
 function addZero(component) {
-  return component < 10 ? "0" + component : component
+  return component < 10 ? '0' + component : component
 }
