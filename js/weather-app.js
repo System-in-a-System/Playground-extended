@@ -22,7 +22,7 @@ template.innerHTML = `
         style="
           display: flex; 
           align-items: center;
-          margin: 15px 0;
+          margin: 15px ;
           font-size: 14px;">
 
             <div id="c"></div>

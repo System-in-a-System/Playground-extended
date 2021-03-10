@@ -1,82 +1,113 @@
+
 var turn = true; //true means X turn
-var squares = [];
+var circles = [];
 
+/***************************************************************/
 function reset(A,B,C){
- document.getElementById('A'+A).style.color="white";
- document.getElementById('A'+B).style.color="white";
- document.getElementById('A'+C).style.color="white";
+ document.getElementById('circle'+A).style.color="white";
+ document.getElementById('circle'+B).style.color="white";
+ document.getElementById('circle'+C).style.color="white";
 
- setTimeout(function(){location.reload()},2000);
+ setTimeout(function(){location.reload()},3000);
 }
 
+//checkWinne
 function checkWinner(){
  for (var i=1; i<=9; i++) {
-  squares[i] = document.getElementById('A'+i).innerHTML;
+    circles[i] = document.getElementById('circle'+i).innerHTML;
  }
 
-// load audio files
-
+ 
+// load win audio file
 let win = new Audio();
-
 win.src = "sounds/winning.mp3";
 
-
+/***************************************************************/
  // check horizontal
- if (squares[1]==squares[2] && squares[2]==squares[3] && squares[1]!=""){
-  alert('player ' + squares[1] +' Wins the game');
+ if (circles[1]==circles[2] && circles[2]==circles[3] && circles[1]!=""){
+  alert('player ' + circles[1] +' Wins the game');
   win.play();
   reset(1,2,3);
  }
- if (squares[4]==squares[5] && squares[5]==squares[6] && squares[4]!=""){
-  alert('player ' + squares[4] +' Wins the game');
+ if (circles[4]==circles[5] && circles[5]==circles[6] && circles[4]!=""){
+  alert('player ' + circles[4] +' Wins the game');
   win.play();
   reset(4,5,6);
  }
- if (squares[7]==squares[8] && squares[8]==squares[9] && squares[7]!=""){
-  alert('player ' + squares[7] +' Wins the game');
+ if (circles[7]==circles[8] && circles[8]==circles[9] && circles[7]!=""){
+  alert('player ' + circles[7] +' Wins the game');
   win.play();
   reset(7,8,9);
  }
 
  //check vertical
- if (squares[1]==squares[4] && squares[4]==squares[7] && squares[1]!=""){
-  alert('player ' + squares[1] +' Wins the game');
+ if (circles[1]==circles[4] && circles[4]==circles[7] && circles[1]!=""){
+  alert('player ' + circles[1] +' Wins the game');
   win.play();
   reset(1,4,7);
  }
- if (squares[2]==squares[5] && squares[5]==squares[8] && squares[2]!=""){
-  alert('player ' + squares[2] +' Wins the game');
+ if (circles[2]==circles[5] && circles[5]==circles[8] && circles[2]!=""){
+  alert('player ' + circles[2] +' Wins the game');
   win.play();
   reset(2,5,8);
  }
- if (squares[3]==squares[6] && squares[6]==squares[9] && squares[3]!=""){
-  alert('player ' + squares[3] +' Wins the game');
+ if (circles[3]==circles[6] && circles[6]==circles[9] && circles[3]!=""){
+  alert('player ' + circles[3] +' Wins the game');
   win.play();
   reset(3,6,9);
  }
 
  //check diagonal
- if (squares[1]==squares[5] && squares[5]==squares[9] && squares[1]!=""){
-  alert('player ' + squares[1] +' Wins the game');
+ if (circles[1]==circles[5] && circles[5]==circles[9] && circles[1]!=""){
+  alert('player ' + circles[1] +' Wins the game');
   win.play();
   reset(1,5,9);
  }
- if (squares[3]==squares[5] && squares[5]==squares[7] && squares[3]!=""){
-  alert('player ' + squares[3] +' Wins the game');
+ if (circles[3]==circles[5] && circles[5]==circles[7] && circles[3]!=""){
+  alert('player ' + circles[3] +' Wins the game');
   win.play();
   reset(3,5,7);
  }
 
 }
 
+
 function insert(id){
- var S = document.getElementById(id);
- if(turn && S.innerHTML==""){
-  S.innerHTML="X";
-  turn = !turn;
- }else if(!turn && S.innerHTML==""){
-  S.innerHTML="O";
-  turn = !turn;
- }
+    var insertValue = document.getElementById(id);
+    if(turn && insertValue.innerHTML==""){
+      insertValue.innerHTML="X";
+     turn = !turn;
+    }else if(!turn && insertValue.innerHTML==""){
+      insertValue.innerHTML="O";
+     turn = !turn;
+    }
  checkWinner();
 }
+
+/***************************************************************/
+                   // Add clock
+const clock = document.querySelector('#clock');
+
+displayCurrentTime(clock);
+
+function displayCurrentTime() {
+    let currentTime = new Date()
+    let hours = currentTime.getHours()
+    let minutes = currentTime.getMinutes()
+    
+    let amOrPm = hours < 12 ? 'AM' : 'PM'
+  
+    hours = hours === 0 ? 12 : hours > 12 ? hours - 12 : hours
+  
+    hours = addZero(hours)
+    minutes = addZero(minutes)
+  
+    let timeString = `${hours}:${minutes} ${amOrPm}`
+    document.getElementById('clock').innerText = timeString
+  
+    let timer = setTimeout(displayCurrentTime, 1000)
+  }
+  
+  function addZero(component) {
+    return component < 10 ? '0' + component : component
+  }
