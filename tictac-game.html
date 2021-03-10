@@ -1,59 +1,37 @@
 <!DOCTYPE html>
-<!-- Created By CodingNepal - www.youtube.com/codingnepal || www.codingnepalweb.com -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <title>Tic Tac Toe Game | CodingNepal</title> -->
     <link rel="stylesheet" href="tictac-game-style.css">
     <script defer src="./js/tictac-game.js"></script>
-    <title>X-O game</title>
-</head>
- <style>
-  .wrapper{
-   width: 400px;
-   height: 400px;
-   margin: 100px auto;
-   background-color: aqua;
-   border-radius: 40px;
-  }
-
-  .square{
-   width: 120px;
-   height: 120px;
-   background: black;
-   margin: 5px;
-   font-size: 108px;
-   font-family: sans-serif;
-   text-align: center;
-   color: red;
-   cursor: pointer;
-   float: left;
-   border-radius: 60px;
-  }
-
-    .back-button{
-      position: absolute; 
-      right: 100px;
-     width: 80px;
-     height: 40px;
    
-    }
- </style>
+    <title>Tic Tac Toe game</title>
 </head>
-<body>
-  <button class="back-button"><a href="/index.html" >Back</a></button>
-  
- <div class="wrapper">
 
-  <div class="square" id="A1" onclick="insert(this.id)"></div>
-  <div class="square" id="A2" onclick="insert(this.id)"></div>
-  <div class="square" id="A3" onclick="insert(this.id)"></div>
-  <div class="square" id="A4" onclick="insert(this.id)"></div>
-  <div class="square" id="A5" onclick="insert(this.id)"></div>
-  <div class="square" id="A6" onclick="insert(this.id)"></div>
-  <div class="square" id="A7" onclick="insert(this.id)"></div>
-  <div class="square" id="A8" onclick="insert(this.id)"></div>
-  <div class="square" id="A9" onclick="insert(this.id)"></div>
+
+<body>
+ 
+    <div id="clock"></div>
+    <div>
+        <img id="stars-effect" src="https://i.pinimg.com/originals/43/7c/b7/437cb739d14912acd84d65ee853b9067.gif" alt="">
+    </div>
+    <button class="back-button"><a href="/index.html" >Back</a></button>
+
+
+
+ <div class="container">
+  
+
+  <div class="circle" id="circle1" onclick="insert(this.id)"></div>
+  <div class="circle" id="circle2" onclick="insert(this.id)"></div>
+  <div class="circle" id="circle3" onclick="insert(this.id)"></div>
+  <div class="circle" id="circle4" onclick="insert(this.id)"></div>
+  <div class="circle" id="circle5" onclick="insert(this.id)"></div>
+  <div class="circle" id="circle6" onclick="insert(this.id)"></div>
+  <div class="circle" id="circle7" onclick="insert(this.id)"></div>
+  <div class="circle" id="circle8" onclick="insert(this.id)"></div>
+  <div class="circle" id="circle9" onclick="insert(this.id)"></div>
+
 
  </div>
 

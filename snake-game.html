@@ -5,25 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
-    <script defer src="./js/snake.js"></script>
+    <script defer src="./js/snake-game.js"></script>
 </head>
 <style>
-    body{
-        background-image: url("https://w-dog.ru/wallpapers/2/19/501625857244167/kosmos-fantastika-mirozdanie-planeta-gorizont-ochertaniya-svet-zvezda-vosxod-bezdna-tma-prostranstvo-tumannosti-rossyp-zv-zd.jpg");
+ body{
+    background-image: url("https://w-dog.ru/wallpapers/2/19/501625857244167/kosmos-fantastika-mirozdanie-planeta-gorizont-ochertaniya-svet-zvezda-vosxod-bezdna-tma-prostranstvo-tumannosti-rossyp-zv-zd.jpg");
     background-size: cover;
     background-position: fixed;
     overflow: hidden; 
     }
+
+#clock {
+
+    float: right;
+    margin: 5%;
+    font-size: 70px;
+    color: white;
+    opacity: 0.8;
+}
     canvas {
 		display: block;
 		position: absolute;
-		border: 5px solid  #009BFF;
 		margin: auto;
 		top: 0;
 		bottom: 0;
 		right: 0;
 		left: 0;
 	}
+   
     .back-button{
       position: absolute; 
       right: 100px;
@@ -34,6 +43,19 @@
 </style>
 </head>
 <body>
+    <div class="playground">
+        <div id="clock"></div>
+        <div>
+            <img id="stars-effect" src="https://i.pinimg.com/originals/43/7c/b7/437cb739d14912acd84d65ee853b9067.gif" alt="">
+        </div>
+        
+    </div>
     <button class="back-button"><a href="/index.html" >Back</a></button>
+
+        <canvas id="canvas" width="500" height="500">
+   
+    </canvas> 
+
+</div>
 </body>
 
