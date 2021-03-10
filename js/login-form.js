@@ -18,10 +18,9 @@ loginTemplate.innerHTML =
     text-align: center;
     font-size: 18px;
     padding: 50px;
-    padding-top: 60px;
-    ">
+    padding-top: 60px;">
 
-  <label id="label" for = "nickname">Hello, Stranger!<br>Enter your nickname:</label>
+  <label id="label" for="nickname">Hello, Stranger!<br>Enter your nickname:</label>
   <input id="nickname" type="text"/>
   
   <button id="submit-button" 
@@ -34,8 +33,9 @@ loginTemplate.innerHTML =
       text-align: center;
       color: black;
       font-size: 13px;
-      padding: 6px;"
-  >Enter</button> 
+      padding: 6px;">
+        Enter
+  </button> 
 
 </div>
 `

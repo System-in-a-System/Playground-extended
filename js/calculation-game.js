@@ -8,25 +8,36 @@ template.innerHTML =
 `
 <div id="gameSpace">
     
-    <div id="motivation" style="margin-top: 10px; text-align: center; font-size: 12px; padding: 12px; opacity: 0.7; 
-    background-image: url(https://storage.googleapis.com/proudcity/elgl/uploads/2019/08/numbers-graphic.jpg);"></div>
+    <div id="motivation" 
+      style="
+        margin-top: 10px; 
+        text-align: center; 
+        font-size: 12px; 
+        padding: 12px; 
+        opacity: 0.7; 
+        background-image: url(https://storage.googleapis.com/proudcity/elgl/uploads/2019/08/numbers-graphic.jpg);">
+    </div>
 
-    <div id="gameButtonContainer" style="background-image: url(https://blackstormco.asia/wp-content/uploads/2019/09/1.jpg); opacity: 0.6;">
-      <button id="gameStartButton" 
-        style="
-          margin-top: 12px; 
-          margin-bottom: 10px; 
-          margin-left: 30%;
-          margin-right: 30%;
-          padding: 12px; 
-          font-size: 13px;
-          font-weight: lighter; 
-          background-color: whitesmoke;"
-        >Start a round
-      </button>
+    <div id="gameButtonContainer" 
+      style="
+        background-image: url(https://blackstormco.asia/wp-content/uploads/2019/09/1.jpg); 
+        opacity: 0.6;">
+
+          <button id="gameStartButton" 
+            style="
+              margin-top: 12px; 
+              margin-bottom: 10px; 
+              margin-left: 30%;
+              margin-right: 30%;
+              padding: 12px; 
+              font-size: 13px;
+              font-weight: lighter; 
+              background-color: whitesmoke;">
+            
+              Start a round
+            </button>
     </div>
     
-
     <div id="paperWrapper" 
       style="
         margin: 7px; 
@@ -53,8 +64,8 @@ template.innerHTML =
   
               margin: auto;
               margin-top: 15px;
-              margin-bottom: 10px;
-            "></div>
+              margin-bottom: 10px;">
+          </div>
 
           <div id="equation">
             <div id="firstNumber" style="display: inline; margin-left: 15px; font-size: 27px;">1</div>
@@ -65,9 +76,14 @@ template.innerHTML =
           </div>
     </div>
 
-    
-
-    <div id="solutionStatus" style="height: 36px; padding: 20px; font-size: 17px; text-align: center; opacity: 0.4;"></div>
+    <div id="solutionStatus" 
+      style="
+        height: 36px; 
+        padding: 20px; 
+        font-size: 17px; 
+        text-align: center; 
+        opacity: 0.4;">
+    </div>
 </div>
 `
 
@@ -171,7 +187,7 @@ class CalculationGame extends WindowFrame {
 
     // Starts a game
     this._gameStartButton.addEventListener('click', e => {
-      // Rearrange the layout & Motivational image & Words
+      // Rearrange the layout 
       this._gameStartButton.style.visibility = 'hidden'
       this._contentBlock.querySelector('#paperWrapper').style.marginTop = '0px'
       
@@ -182,14 +198,14 @@ class CalculationGame extends WindowFrame {
       this._enterEventIsAllowed = true
     })
 
-    // Submits solutions
+    // Submits solutions upon enter press
     this._inputResult.addEventListener('keypress', e => {
       if (e.keyCode === 13 && this._enterEventIsAllowed) {
         clearInterval(this._currentTimer)
         this.checkResults()
         this._roundsCounter++
 
-        // Generate equation until they number reaches 10
+        // Generate next equation until their count reaches 10
         if (this._roundsCounter < 10) {
           this.generateEquation()
           this.setTimer()
@@ -197,14 +213,14 @@ class CalculationGame extends WindowFrame {
           this._gameIsOn = false
           this.finishGame()
         }
-
+        
+        // Clear up input field
         e.target.value = ''
         e.preventDefault()
       }
     })
 
     
-
     // Control panel buttons are listening for events:
     this._newGameButton.addEventListener('click', e => {
       this.restartTheGame()
@@ -247,8 +263,7 @@ class CalculationGame extends WindowFrame {
 
     // Generate random operator & Calculate the correct solution for equation
     let randomOperator = ''
-
-    const random = Math.floor(Math.random() * (3 - 1 + 1)) + 1
+    const random = Math.floor(Math.random() * 3) + 1
 
     switch (random) {
       case 1:
@@ -278,6 +293,7 @@ class CalculationGame extends WindowFrame {
    */
   checkResults () {
     const userResult = parseInt(this._inputResult.value, 10)
+    
     if (userResult === this._correctResult) {
       // Confirm the solution & update the score
       this._solutionStatus.style.backgroundColor = ' rgb(158, 253, 194)'
@@ -288,17 +304,19 @@ class CalculationGame extends WindowFrame {
       const correctSound = new window.Audio('./sounds/correct.mp3')
       correctSound.volume = 0.1
       correctSound.play()
+    
     } else {
       // Inform about incorrect answer
       this._solutionStatus.style.backgroundColor = 'rgb(177, 176, 176)'
       this._solutionStatus.textContent = `Incorrect😋, right answer: ${this._correctResult}`
     }
-    // Clean the input field
+
+    // Clean up input field
     this._inputResult.value = ''
   }
 
   /**
-   * Handles a timer for the game
+   * Handles timer for the game round
    *
    * @memberof CalculationGame
    */
@@ -355,7 +373,7 @@ class CalculationGame extends WindowFrame {
     this._gameStartButton.style.visibility = 'visible'
     this._enterEventIsAllowed = false
 
-    // Clean motivation container
+    // Clean gamer nickname container
     this._solutionStatus.textContent = ''
     this._solutionStatus.style.backgroundColor = 'whitesmoke'
 
@@ -400,7 +418,7 @@ class CalculationGame extends WindowFrame {
     // Save current user score
     const currentNicknameScorePair = { name: this._nickname, score: this._totalScore }
 
-    // Check if currrent user score qualifies for the list of 5 top-players
+    // Check if current user score qualifies for the list of 5 top-players
     const scoreStatistics = JSON.parse(window.localStorage.getItem('cg-top-players')) || []
 
     if (scoreStatistics.length >= 5) {
@@ -444,14 +462,13 @@ class CalculationGame extends WindowFrame {
     // Retrieve top-player list from the local storage
     const retrievedTopList = JSON.parse(window.localStorage.getItem('cg-top-players'))
 
-    // Compile a table
+    // Clone & Append score table template
     this._contentBlock.appendChild(scoreTableTemplate.content.cloneNode(true))
     const scoreTable = this._contentBlock.querySelector('#score-table')
 
-    // Load top-players into a score-table
+    // Load top-players into score-table
     for (let i = 0; i < retrievedTopList.length; i++) {
-      scoreTable.innerHTML +=
-      '<tr><td>' + retrievedTopList[i].name + '</td><td>' + retrievedTopList[i].score + '</td></tr>'
+      scoreTable.innerHTML += '<tr><td>' + retrievedTopList[i].name + '</td><td>' + retrievedTopList[i].score + '</td></tr>'
     }
 
     // Centralize the score-table
