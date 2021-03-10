@@ -110,8 +110,6 @@ function displayCurrentTime() {
 
 function addZero(component) {
   return component < 10 ? '0' + component : component
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> bc24a480019426fafbd496140a638ad3d86413df
+ 
